@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 7 - Sécurité</title>
+</head>
+<body>
+    <h1>Saisie Sécurisée (Try/Catch)</h1>
+    <button onclick="verifierSaisie()">Entrer un nombre</button>
+    <p id="feedback"></p>
+
+    <script>
+        function verifierSaisie() {
+            let p = document.getElementById("feedback");
+            try {
+                let input = prompt("Entrez un nombre entre 1 et 100 :");
+                let num = Number(input);
+
+                if (isNaN(num) || input === "") throw "Erreur : Ce n'est pas un nombre !";
+                if (num < 1 || num > 100) throw "Erreur : Nombre hors de la plage (1-100).";
+
+                p.style.color = "green";
+                p.innerHTML = "Validé : Vous avez saisi " + num;
+            } catch (erreur) {
+                p.style.color = "red";
+                p.innerHTML = erreur;
+            }
+        }
+    </script>
+</body>
+</html>

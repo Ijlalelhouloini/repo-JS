@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 4 - Tri</title>
+</head>
+<body>
+    <h1>Tri et Break</h1>
+    <button onclick="trier()">Lancer le tri</button>
+    <p id="resultat"></p>
+
+    <script>
+        function trier() {
+            let notes = [10, 15, 8, 18, 12];
+            notes.sort((a, b) => a - b);
+            let msg = "Notes triées : " + notes.join(", ");
+            for (let n of notes) {
+                if (n < 10) {
+                    msg += "<br><strong>Arrêt : Note " + n + " trouvée.</strong>";
+                    break;
+                }
+            }
+            document.getElementById("resultat").innerHTML = msg;
+        }
+    </script>
+</body>
+</html>

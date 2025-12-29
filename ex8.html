@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 8 - JSON</title>
+</head>
+<body>
+    <h1>JSON Stringify et Parse</h1>
+    <button onclick="runJSON()">Lancer</button>
+    <p id="resultat" style="background: #eee; padding: 10px;"></p>
+
+    <script>
+        function runJSON() {
+            let user = { nom: prompt("Nom :"), age: 20 };
+            let raw = JSON.stringify(user); // Vers le serveur
+            let parsed = JSON.parse(raw); // Depuis le serveur
+            document.getElementById("resultat").innerHTML = "JSON Brut : " + raw + "<br>Nom extrait : " + parsed.nom;
+        }
+    </script>
+</body>
+</html>

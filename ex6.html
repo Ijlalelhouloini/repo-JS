@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 6 - Objets</title>
+</head>
+<body>
+    <h1>Gestion Stock</h1>
+    <button onclick="vendre()">Vendre 1 PC</button>
+    <p id="resultat"></p>
+
+    <script>
+        let catalogue = [{nom: "PC", qte: 10}, {nom: "Souris", qte: 5}];
+        function vendre() {
+            let p = catalogue[0];
+            if (p.qte > 0) {
+                p.qte--;
+                document.getElementById("resultat").innerHTML = "Vendu ! Reste : " + p.qte;
+            } else {
+                document.getElementById("resultat").innerHTML = "Stock épuisé";
+            }
+        }
+    </script>
+</body>
+</html>

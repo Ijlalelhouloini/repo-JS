@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 3 - Multiplication</title>
+</head>
+<body>
+    <h1>Table de Multiplication (Pairs uniquement)</h1>
+    <button onclick="genererTable()">Générer la table</button>
+    <p id="tableResultat" style="white-space: pre-line; background: #eee; padding: 10px;"></p>
+
+    <script>
+        function genererTable() {
+            let n = Number(prompt("Entrez un nombre :"));
+            let resultat = "";
+            for (let i = 1; i <= 10; i++) {
+                let res = n * i;
+                if (res % 2 === 0) {
+                    resultat += `${n} x ${i} = ${res}\n`;
+                }
+            }
+            document.getElementById("tableResultat").innerText = resultat;
+        }
+    </script>
+</body>
+</html>

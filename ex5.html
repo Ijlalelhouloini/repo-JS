@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 5 - Fonctions</title>
+</head>
+<body>
+    <h1>Calcul de Moyenne</h1>
+    <button onclick="demanderNotes()">Saisir les notes</button>
+    <p id="resultat"></p>
+
+    <script>
+        const calculer = (tab) => tab.reduce((a, b) => a + b, 0) / tab.length;
+
+        function demanderNotes() {
+            let notes = [];
+            for (let i = 0; i < 5; i++) notes.push(Number(prompt("Note " + (i+1))));
+            document.getElementById("resultat").innerHTML = "Moyenne : " + calculer(notes).toFixed(2);
+        }
+    </script>
+</body>
+</html>

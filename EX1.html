@@ -1,0 +1,31 @@
+<<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 1 - Réduction</title>
+</head>
+<body>
+    <h1>Calculateur de Réduction</h1>
+    <button onclick="calculer()">Calculer la réduction</button>
+    <p id="affichage" style="color: blue; font-weight: bold;"></p>
+
+    <script>
+        function calculer() {
+            let montant = Number(prompt("Entrez le montant de vos achats :"));
+            let reduction = 0;
+
+            if (montant < 200) {
+                reduction = montant * 0.05;
+            } else if (montant <= 500) {
+                reduction = montant * 0.10;
+            } else {
+                reduction = montant * 0.20;
+            }
+
+            let total = montant - reduction;
+            document.getElementById("affichage").innerHTML = 
+                `Pour un montant de ${montant}Dh, la réduction est de ${reduction}Dh. Total à payer: ${total}Dh.`;
+        }
+    </script>
+</body>
+</html>

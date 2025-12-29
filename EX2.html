@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 2 - Password</title>
+</head>
+<body>
+    <h1>Vérification du Mot de Passe</h1>
+    <button onclick="verifierPass()">Tester un mot de passe</button>
+    <p id="msg" style="color: darkcyan;"></p>
+
+    <script>
+        function verifierPass() {
+            let password = prompt("Entrez un mot de passe :");
+            let force = "";
+
+            if (password.length < 8) force = "Faible";
+            else if (password.length <= 12) force = "Moyen";
+            else force = "Fort";
+
+            document.getElementById("msg").innerHTML = "Force du mot de passe : " + force;
+        }
+    </script>
+</body>
+</html>
